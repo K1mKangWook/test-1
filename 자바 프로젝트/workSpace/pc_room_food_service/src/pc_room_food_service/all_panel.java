@@ -1,7 +1,6 @@
 package pc_room_food_service;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class all_panel extends JPanel {
@@ -37,7 +36,10 @@ public class all_panel extends JPanel {
 	JLabel nugget = new JLabel();
 	JLabel mandoo = new JLabel();
 	
-	public all_panel() {
+	GoodsOrder goodsOrder;
+	
+	public all_panel(GoodsOrder goodsOrder) {
+		this.goodsOrder = goodsOrder;
 		setLayout(new FlowLayout(FlowLayout.LEFT,10,15));
 		
 		//meal
@@ -45,16 +47,19 @@ public class all_panel extends JPanel {
 		 kimchi_rice.setIcon(kimchi_rice_image);
 		 kimchi_rice.setHorizontalTextPosition(SwingConstants.CENTER);
 		 kimchi_rice.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 kimchi_rice.addMouseListener(goodsOrder.orderList);
 		
 		 chicken_mayo.setText("Chicken Mayo 6000won");
 		 chicken_mayo.setIcon(chicken_mayo_image);
 		 chicken_mayo.setHorizontalTextPosition(SwingConstants.CENTER);
 		 chicken_mayo.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 chicken_mayo.addMouseListener(goodsOrder.orderList);
 		 
 		 Nakgbibimbab.setText("NakgiBibimbab 8000won");
 		 Nakgbibimbab.setIcon(Nakgbibimbab_image);
 		 Nakgbibimbab.setHorizontalTextPosition(SwingConstants.CENTER);
 		 Nakgbibimbab.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 Nakgbibimbab.addMouseListener(goodsOrder.orderList);
 		
 	
 		 add(kimchi_rice);
@@ -66,16 +71,19 @@ public class all_panel extends JPanel {
 		 jin_ramen.setIcon(jin_ramen_image);
 		 jin_ramen.setHorizontalTextPosition(SwingConstants.CENTER);
 		 jin_ramen.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 jin_ramen.addMouseListener(goodsOrder.orderList);
 			
 		 sin_ramen.setText("Sin Ramen 3000won");
 		 sin_ramen.setIcon(sin_ramen_image);
 		 sin_ramen.setHorizontalTextPosition(SwingConstants.CENTER);
 		 sin_ramen.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 sin_ramen.addMouseListener(goodsOrder.orderList);
 			
 		 buldak.setText("Buldak 3000won");
 		 buldak.setIcon(buldak_image);
 		 buldak.setHorizontalTextPosition(SwingConstants.CENTER);
 		 buldak.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 buldak.addMouseListener(goodsOrder.orderList);
 			
 		
 		 add(jin_ramen);
@@ -88,16 +96,19 @@ public class all_panel extends JPanel {
 		 coke.setIcon(coke_image);
 		 coke.setHorizontalTextPosition(SwingConstants.CENTER);
 		 coke.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 coke.addMouseListener(goodsOrder.orderList);
 			
 		 soda.setText("Soda 2000won");
 		 soda.setIcon(soda_image);
 		 soda.setHorizontalTextPosition(SwingConstants.CENTER);
 		 soda.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 soda.addMouseListener(goodsOrder.orderList);
 			
 		 fanta.setText("Fanta 2000won");
 		 fanta.setIcon(fanta_image);
 		 fanta.setHorizontalTextPosition(SwingConstants.CENTER);
 		 fanta.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 fanta.addMouseListener(goodsOrder.orderList);
 			
 		
 		 add(coke);
@@ -110,16 +121,19 @@ public class all_panel extends JPanel {
 		hotbar.setIcon(hotbar_image);
 		hotbar.setHorizontalTextPosition(SwingConstants.CENTER);
 		hotbar.setVerticalTextPosition(SwingConstants.BOTTOM);
+		hotbar.addMouseListener(goodsOrder.orderList);
 		
 		nugget.setText("Nugget 3000won");
 		nugget.setIcon(nugget_image);
 		nugget.setHorizontalTextPosition(SwingConstants.CENTER);
 		nugget.setVerticalTextPosition(SwingConstants.BOTTOM);
+		nugget.addMouseListener(goodsOrder.orderList);
 		
 		mandoo.setText("Mandoo 3000won");
 		mandoo.setIcon(mandoo_image);
 		mandoo.setHorizontalTextPosition(SwingConstants.CENTER);
 		mandoo.setVerticalTextPosition(SwingConstants.BOTTOM);
+		mandoo.addMouseListener(goodsOrder.orderList);
 		
 	
 		 add(hotbar);

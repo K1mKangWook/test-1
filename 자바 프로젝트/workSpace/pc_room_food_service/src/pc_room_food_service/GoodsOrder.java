@@ -5,6 +5,10 @@ import java.awt.*;
 
 public class GoodsOrder extends JFrame {
 	Container c;
+	JTextArea order_details;
+	JTextArea sum;
+	OrderList orderList = new OrderList(this);
+	
 	public GoodsOrder() {
 		setTitle("GoodsOrder");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -13,10 +17,9 @@ public class GoodsOrder extends JFrame {
 		/*
 		 * origin panel
 		 */
-		setMenu_panel sp = new setMenu_panel();
-		best_panel bp = new best_panel();
-		bp.setLocation(0, 50);
-		c.add(bp);	
+		all_panel all_panel = new all_panel(this);
+		all_panel.setLocation(0, 50);
+		c.add(all_panel);	
 		/*
 		 * Define JLabel
 		 */
@@ -43,15 +46,7 @@ public class GoodsOrder extends JFrame {
 		JButton order = new JButton();
 		order.setIcon(order_image);
 		
-		/*
-		 * /Define Menu name
-		 */
-		String all_menu[];
-		String meal_menu[] = {"Kimchi Rice", "Chicken Mayo", "Nakg Bibimbab"};
-		String ramen_menu[] = {"Jin Rame", "Sin Ramen", "Buldak"};
-		String beverage_menu[] = {"Coke" , "Soda", "Fanta"};
-		String snack_menu[] = {"Mandoo", "Hotbar" , "Nugget"};
-		String addition_menu[] = {"Kimchi" , "Danmooji"};
+	
 			
 		/*
 		 * Define radio Button
@@ -81,11 +76,23 @@ public class GoodsOrder extends JFrame {
 		/*
 		 * Define JTextArea
 		 */
-		JTextArea order_details = new JTextArea(7,20);
+		order_details = new JTextArea(7,20);
+		JScrollPane scrollPane = new JScrollPane(order_details);
 		order_details.append("You can check the product you ordered.\n");
-		order_details.setBounds(1132,450,420,200);
-		c.add(order_details);
+		scrollPane.setBounds(1132,450,420,160);
+		c.add(scrollPane);
 		
+		sum = new JTextArea(7,20);
+		sum.setBounds(1132,620, 420,30);
+		c.add(sum);
+		
+		/*
+		 * Define reset button
+		 */
+		JButton reset = new JButton("Reset");
+		reset.addMouseListener(new ClickReset(this));
+		reset.setBounds(1452,424,100,20);
+		c.add(reset);
 		
 		/*
 		 * set Location background
@@ -188,7 +195,7 @@ public class GoodsOrder extends JFrame {
 		snack.addMouseListener(click_motion);
 		addition.addMouseListener(click_motion);
 		
-		order.addMouseListener(new ClickOrder());
+		order.addMouseListener(new ClickOrder(this));
 		
 												
 		//Menu area
@@ -219,6 +226,14 @@ public class GoodsOrder extends JFrame {
 	
 	public Container getContainer() {
 		return c;
+	}
+	
+	public JTextArea getTextArea() {
+		return order_details;
+	}
+		
+	public JTextArea getSum() {
+		return sum;
 	}
 	
 	public void switchPanel(JPanel panel) {

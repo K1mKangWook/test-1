@@ -1,7 +1,6 @@
 package pc_room_food_service;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class meal_panel extends JPanel {
@@ -12,23 +11,30 @@ public class meal_panel extends JPanel {
 	JLabel chicken_mayo = new JLabel();
 	JLabel Nakgbibimbab = new JLabel();
 	
-	public meal_panel() {
+	GoodsOrder goodsOrder;
+	
+	public meal_panel(GoodsOrder goodsOrder) {
+		this.goodsOrder = goodsOrder;
+		
 		setLayout(new FlowLayout(FlowLayout.LEFT,10,15));
 		
 		 kimchi_rice.setText("Kimchi Rice 6000won");
 		 kimchi_rice.setIcon(kimchi_rice_image);
 		 kimchi_rice.setHorizontalTextPosition(SwingConstants.CENTER);
 		 kimchi_rice.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 kimchi_rice.addMouseListener(goodsOrder.orderList);
 		
 		 chicken_mayo.setText("Chicken Mayo 6000won");
 		 chicken_mayo.setIcon(chicken_mayo_image);
 		 chicken_mayo.setHorizontalTextPosition(SwingConstants.CENTER);
 		 chicken_mayo.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 chicken_mayo.addMouseListener(goodsOrder.orderList);
 		 
 		 Nakgbibimbab.setText("NakgiBibimbab 8000won");
 		 Nakgbibimbab.setIcon(Nakgbibimbab_image);
 		 Nakgbibimbab.setHorizontalTextPosition(SwingConstants.CENTER);
 		 Nakgbibimbab.setVerticalTextPosition(SwingConstants.BOTTOM);
+		 Nakgbibimbab.addMouseListener(goodsOrder.orderList);
 		
 	
 		 add(kimchi_rice);

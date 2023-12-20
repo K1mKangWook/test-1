@@ -14,7 +14,7 @@ public class OnTheMenu extends MouseAdapter {
 	private JLabel origin; //define JLabel value, To save origin component 
 	
 	/*
-	 * Defien Panel
+	 * Define Panel
 	 */
 	public best_panel best_panel;
 	public setMenu_panel setMenu_panel;
@@ -68,50 +68,50 @@ public class OnTheMenu extends MouseAdapter {
 		//if you click the menu bar, change the menu panel
 		if (c.getText().equals("SetMenu")) {
 			removeCurrentPanel();
-			setMenu_panel = new setMenu_panel();
+			setMenu_panel = new setMenu_panel(goodsOrder);
 			setMenu_panel.setLocation(0,50);
 			goodsOrder.getContainer().add(setMenu_panel);
 			
 		}
 		else if (c.getText().equals("Best")) {
 			removeCurrentPanel();
-			best_panel = new best_panel();
+			best_panel = new best_panel(goodsOrder);
 			best_panel.setLocation(0,50);
 			goodsOrder.getContainer().add(best_panel);
 		}
 		else if (c.getText().equals("Meal")) {
 			removeCurrentPanel();
-			meal_panel = new meal_panel();
+			meal_panel = new meal_panel(goodsOrder);
 			meal_panel.setLocation(0,50);
 			goodsOrder.getContainer().add(meal_panel);
 		}
 		else if (c.getText().equals("Ramen")) {
 			removeCurrentPanel();
-			ramen_panel = new ramen_panel();
+			ramen_panel = new ramen_panel(goodsOrder);
 			ramen_panel.setLocation(0,50);
 			goodsOrder.getContainer().add(ramen_panel);
 		}
 		else if (c.getText().equals("Beverage")) {
 			removeCurrentPanel();
-			beverage_panel = new beverage_panel();
+			beverage_panel = new beverage_panel(goodsOrder);
 			beverage_panel.setLocation(0,50);
 			goodsOrder.getContainer().add(beverage_panel);
 		}
 		else if (c.getText().equals("Snack")) {
 			removeCurrentPanel();
-			snack_panel = new snack_panel();
+			snack_panel = new snack_panel(goodsOrder);
 			snack_panel.setLocation(0,50);
 			goodsOrder.getContainer().add(snack_panel);
 		}
 		else if (c.getText().equals("Addition")) {
 			removeCurrentPanel();
-			addition_panel = new addtion_panel();
+			addition_panel = new addtion_panel(goodsOrder);
 			addition_panel.setLocation(0,50);
-			goodsOrder.getContainer().add(addition_panel);
+			goodsOrder.getContainer().add(addition_panel);	
 		}
 		else if (c.getText().equals("All")) {
 			removeCurrentPanel();
-			all_panel = new all_panel();
+			all_panel = new all_panel(goodsOrder);
 			all_panel.setLocation(0,50);
 			goodsOrder.getContainer().add(all_panel);
 		}
