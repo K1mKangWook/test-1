@@ -8,6 +8,7 @@ public class GoodsOrder extends JFrame {
 	JTextArea order_details;
 	JTextArea sum;
 	OrderList orderList = new OrderList(this);
+	SumofOrder sumofOrder = new SumofOrder();
 	
 	public GoodsOrder() {
 		setTitle("GoodsOrder");
@@ -236,12 +237,17 @@ public class GoodsOrder extends JFrame {
 		return sum;
 	}
 	
+	public SumofOrder getSumofOrder() {
+		return sumofOrder;
+	}
+	
 	public void switchPanel(JPanel panel) {
 		c.removeAll();
 		c.add(panel);
 		c.revalidate();
 		c.repaint();
 	}
+	
 }
 
 

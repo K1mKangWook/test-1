@@ -6,11 +6,11 @@ public class OrderList extends MouseAdapter {
 	
 	GoodsOrder goodsOrder;
 	int price;
-	SumofOrder sumofOrder;
+	//SumofOrder sumofOrder;
 	
 	OrderList(GoodsOrder goodsOrder) {
 		this.goodsOrder = goodsOrder;
-		this.sumofOrder = new SumofOrder();
+		//this.sumofOrder = new SumofOrder();
 	}
 	
 	/*
@@ -63,7 +63,7 @@ public class OrderList extends MouseAdapter {
 			price = 7000;
 		}
 
-		sumofOrder.addsum(price);
-		goodsOrder.getSum().setText("Sum of Price : " + sumofOrder.getSum());	
+		goodsOrder.getSumofOrder().addsum(price);
+		goodsOrder.getSum().setText("Sum of Price : " + goodsOrder.getSumofOrder().getSum());	
 	}
 }

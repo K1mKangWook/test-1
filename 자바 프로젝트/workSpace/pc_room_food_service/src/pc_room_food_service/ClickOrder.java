@@ -17,6 +17,8 @@ public class ClickOrder extends MouseAdapter {
 			goodsOrder.getTextArea().setText("");
 			goodsOrder.getTextArea().append("You can check the product you ordered.\n");
 			goodsOrder.getSum().setText("");
+			
+			goodsOrder.getSumofOrder().sum = 0;
 		}
 	}
 }
